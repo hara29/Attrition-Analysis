@@ -28,7 +28,7 @@ Pembuatan business dashboard interaktif menggunakan Metabase, yang menampilkan:
 
 ### Persiapan
 
-Sumber data: ....
+Sumber data: [JayaJayaMaju](https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee)
 
 Setup environment:
 
