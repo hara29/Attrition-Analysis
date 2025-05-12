@@ -11,7 +11,7 @@ Untuk mendukung pengambilan keputusan yang tepat, departemen HR membutuhkan dash
 ### Permasalahan Bisnis
 
 Berikut adalah permasalahan bisnis utama yang ingin diselesaikan:
-- Tingginya angka attrition rate yang melebihi 10% setiap tahun.
+- Tingginya angka attrition rate yang melebihi 10%.
 - Tidak adanya alat bantu visual atau analitik yang memadai untuk memantau faktor-faktor penyebab attrition.
 - Kurangnya pemahaman tentang bagaimana atribut-atribut seperti usia, pendapatan, jenis pekerjaan, kepuasan kerja, lembur, dan jarak tempat tinggal mempengaruhi keputusan karyawan untuk keluar.
 - Sulitnya mendeteksi lebih awal pola atau tren yang menunjukkan risiko tinggi karyawan akan keluar dari perusahaan.
@@ -19,13 +19,12 @@ Berikut adalah permasalahan bisnis utama yang ingin diselesaikan:
 
 ### Cakupan Proyek
 
-Pembuatan business dashboard interaktif menggunakan Metabase, yang menampilkan:
-- Statistik dasar attrition rate secara keseluruhan dan per divisi
-- Analisis faktor demografis (usia, jenis kelamin, status pernikahan)
-- Analisis faktor pekerjaan (jabatan, departemen, jam kerja, lembur)
-- Analisis kompensasi (gaji bulanan, kenaikan gaji, opsi saham)
-- Analisis kepuasan kerja dan work-life balance
-Pembuatan model machine learning untuk memprediksi karyawan yang akan mengalami retensi.
+1. Pembuatan business dashboard interaktif menggunakan Metabase, yang menampilkan:
+   - Statistik dasar attrition rate secara umum (departemen, role, level pekerjaan, dan usia)
+   - Analisis faktor demografis (jenis kelamin, status pernikahan, dan jarak rumah ke kantor)
+   - Analisis faktor pekerjaan (lembur, level kepuasan pekerjaan, level work life balance, level keterlibatan dalam pekerjaan serta level kepuasan lingkungan kerja)
+   - Analisis kompensasi dan pengambangan karir (gaji bulanan, kenaikan gaji, total training tahun lalu, dan lama bekerja di perusahaan dalam tahun)
+2. Pembuatan model machine learning untuk memprediksi karyawan yang akan mengalami retensi.
 
 ### Persiapan
 
@@ -35,8 +34,6 @@ Untuk membangun dashboard analisis attrition menggunakan Metabase, terdapat dua 
 
 1. **Lingkungan Python** untuk eksplorasi dan pembersihan data (jika dibutuhkan).
 2. **Environment Metabase** untuk membuat dashboard interaktif.
-
----
 
 ### 📦 Instalasi Library Python
 
@@ -72,11 +69,16 @@ Untuk memudahkan proses setup, Metabase dapat dijalankan menggunakan Docker. Iku
 4. Akses Metabase
    Buka browser dan akses Metabase pada URL berikut [](http://localhost:3000/setup)
 
-Untuk menjalankan model prediksi Random Forest terdapat dua bagian utama yang perlu dipersiapkan:
-1. Prerequisite system and library
-2. Langkah - langkah penggunaan
+**Catatan:**
+-  email “root@mail.com”
+-  password “root123”
 
 ---
+
+Untuk menjalankan model prediksi Random Forest terdapat dua bagian utama yang perlu dipersiapkan:
+1. **Prerequisite system and library**
+2. **Langkah - langkah penggunaan**
+
 ### Prerequisite
 1.  **Python 3 terinstal** di sistem Anda.
 2.  **Pustaka `pandas` dan `joblib` terinstal.** Anda dapat menginstalnya menggunakan pip:
@@ -104,22 +106,37 @@ Untuk menjalankan model prediksi Random Forest terdapat dua bagian utama yang pe
 Dashboard ini dirancang untuk menganalisis attrition (tingkat keluar masuk karyawan) dalam perusahaan, menggunakan data karyawan yang telah diklasifikasikan berdasarkan beberapa faktor penting. Komponen utama dari dashboard ini meliputi:
 
 1. Attrition Rate secara umum: Memberikan wawasan mendalam mengenai tingkat attrition per departemen, tugas, level tugas dan umur.
-![3C794044-0B57-47C7-BABF-5764BBADB653_1_201_a](https://github.com/user-attachments/assets/3f15720b-0baf-4c5e-89e0-ed28de654233)
+<img width="1074" alt="Screenshot 2025-05-12 at 22 00 16" src="https://github.com/user-attachments/assets/03906eae-4237-4203-903b-9bd84f9272aa" />
+<img width="1137" alt="Screenshot 2025-05-12 at 21 57 36" src="https://github.com/user-attachments/assets/0d9bc5ab-70dd-4ff1-aa94-cfe12010c0c3" />
+<img width="1073" alt="Screenshot 2025-05-12 at 22 00 35" src="https://github.com/user-attachments/assets/30cea524-433a-49f1-99b8-c70105c625c7" />
 
 2. Attrition Rate berdasarkan faktor demografi: Memberikan wawasan mendalam mengenai tingkat attrition berdasarkan gender, status pernikahan, dan jarak kantor ke rumah.
+<img width="1238" alt="Screenshot 2025-05-12 at 12 12 46" src="https://github.com/user-attachments/assets/17394fa5-8a73-4a81-b937-f0d7be4b27cc" />
 
+3. Attrition Rate terkait pekerjaan: Memberikan wawasan mendalam mengenai tingkat attrition berdasarkan lembur atau tidak, level kepuasan pekerjaan, level work life balance, level keterlibatan dalam pekerjaan serta level kepuasan lingkungan kerja.
+<img width="1182" alt="Screenshot 2025-05-12 at 12 12 58" src="https://github.com/user-attachments/assets/9c9086bd-4341-40e2-a984-68f2c7495109" />
+<img width="1057" alt="Screenshot 2025-05-12 at 22 01 06" src="https://github.com/user-attachments/assets/a5b303c1-7a54-4312-b9c4-0de19ef06fde" />
 
-4. Attrition Rate terkait pekerjaan: Memberikan wawasan mendalam mengenai tingkat attrition berdasarkan lembur atau tidak, level kepuasan pekerjaan, level work life balance, level keterlibatan dalam pekerjaan serta level kepuasan lingkungan kerja.
-
-5. Attrition Rate terkait kompensasi dan pengembangan karir: Memberikan wawasan mendalam mengenai tingkat attrition berdasarkan gaji per bulan, persentase kenaikan gaji dari bulan sebelumnya, total training di tahun lalu, dan lama bekerja di perusahaan dalam tahun.
+4. Attrition Rate terkait kompensasi dan pengembangan karir: Memberikan wawasan mendalam mengenai tingkat attrition berdasarkan gaji per bulan, persentase kenaikan gaji dari bulan sebelumnya, total training di tahun lalu, dan lama bekerja di perusahaan dalam tahun.
+<img width="1183" alt="Screenshot 2025-05-12 at 12 13 17" src="https://github.com/user-attachments/assets/2322c139-0f05-42ce-b3fc-7a90ed829707" />
 
 ## Conclusion
 
-Jelaskan konklusi dari proyek yang dikerjakan.
+Dari hasil visualisasi, terdapat beberapa poin penting yang dapat disimpulkan:
+
+1. Departemen dengan tingkat attrition tertinggi adalah Sales (14.8%) dan Research & Development(11.13%). Sedangkan untuk tugas (JobRole) dengan attrition rate tertinggi ada di sales representative (30.12%) dan laboratory technician (18.92%). Berdasarkan level pekerjaan, level pekerjaan 1 (paling rendah) justru memiliki attrition rate terbesar yaitu 19.89%. Berdasarkan usia, attrition rate terbesar ada di usia 15-20 tahun yaitu di angka 52.94%
+2. Berdasarkan faktor demografi, attrition rate paling tinggi dipengaruhi oleh status pernikahan karyawan, yaitu attrition rate untuk status single sebesar 20%, untuk married sebesar 9.21%, dan untuk divorce sebesar 7.03%
+3. Faktor yang berhubungan dengan pekerjaan menunjukkan peran yang besar untuk attrition. Attrition rate untuk karyawan yang bekerja lembur sebesar 23.56% sedangkan karyawan yang tidak lembur hanya 7.69%. Selain itu, attrition rate terbesar ada di level kepuasan pekerjaan terendah, level work life balance terendah, level keterlibatan dalam pekerjaan yang rendah, serta level kepuasan lingkungan kerja terendah.
+4. Faktor yang berhubungan dengan kompensasi dan pengembangan karir menunjukkan attrition rate tertinggi  ada pada gaji bulanan di angka terendah yaitu $0 - $2,500 (23.66%) dan berdasarkan jumlah training di tahun lalu menunjukkan bahwa karyawan yang tidak mendapatkan training di tahun sebelumnya memiliki attrition rate sebesar 24.07%.
+5. Meskipun sebagian besar karyawan masih aktif (non-attrition), persentase attrition yang signifikan menunjukkan adanya masalah yang perlu diatasi.
+6. Distribusi attrition yang tidak merata antar departemen mengindikasikan bahwa beberapa area mengalami tantangan organisasi atau beban kerja yang lebih berat.
 
 ### Rekomendasi Action Items (Optional)
 
-Berikan beberapa rekomendasi action items yang harus dilakukan perusahaan guna menyelesaikan permasalahan atau mencapai target mereka.
+Berdasarkan analisis tersebut, berikut beberapa rekomendasi yang dapat diambil oleh perusahaan:
 
-- action item 1
-- action item 2
+1. Lakukan exit interview terstruktur di departemen dengan attrition tinggi (Sales dan Research and Development) untuk memahami alasan spesifik karyawan keluar.
+2. Tinjau ulang kebijakan kompensasi, beban kerja, dan jenjang karier di departemen yang terdampak.
+3. Implementasikan program retensi karyawan seperti pelatihan pengembangan karier, mentoring, atau fleksibilitas kerja.
+4. Lakukan survei keterlibatan karyawan secara berkala untuk mendeteksi gejala ketidakpuasan sebelum berujung pada pengunduran diri.
+5. Pantau metrik ini secara berkala di dashboard Metabase untuk melihat dampak dari kebijakan yang diimplementasikan dan mendeteksi tren baru lebih awal.
