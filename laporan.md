@@ -6,7 +6,7 @@ Jaya Jaya Maju adalah perusahaan multinasional yang telah beroperasi sejak tahun
 
 Attrition rate yang tinggi mengindikasikan adanya masalah dalam kepuasan kerja, manajemen karier, kompensasi, atau kondisi kerja secara umum. Hal ini dapat menyebabkan kerugian besar bagi perusahaan, baik dari sisi finansial (biaya rekrutmen dan pelatihan ulang), produktivitas, maupun stabilitas organisasi.
 
-Untuk mendukung pengambilan keputusan yang tepat, departemen HR membutuhkan dashboard berbasis data yang dapat membantu memantau dan menganalisis faktor-faktor yang mempengaruhi tingginya attrition rate. Visualisasi yang tepat akan memudahkan HR dalam memahami kondisi terkini dan mengambil tindakan preventif atau korektif secara lebih cepat dan akurat.
+Untuk mendukung pengambilan keputusan yang tepat, departemen HR membutuhkan dashboard berbasis data yang dapat membantu memantau dan menganalisis faktor-faktor yang mempengaruhi tingginya attrition rate. Visualisasi yang tepat akan memudahkan HR dalam memahami kondisi terkini dan mengambil tindakan preventif atau korektif secara lebih cepat dan akurat. Selain itu, dibutuhkan juga model machine learning untuk memprediksi karyawan - karyawan yang mungkin akan mengundurkan diri / mengalami attrition.
 
 ### Permasalahan Bisnis
 
@@ -15,7 +15,7 @@ Berikut adalah permasalahan bisnis utama yang ingin diselesaikan:
 - Tidak adanya alat bantu visual atau analitik yang memadai untuk memantau faktor-faktor penyebab attrition.
 - Kurangnya pemahaman tentang bagaimana atribut-atribut seperti usia, pendapatan, jenis pekerjaan, kepuasan kerja, lembur, dan jarak tempat tinggal mempengaruhi keputusan karyawan untuk keluar.
 - Sulitnya mendeteksi lebih awal pola atau tren yang menunjukkan risiko tinggi karyawan akan keluar dari perusahaan.
-- Tidak adanya sistem berbasis data untuk mendukung kebijakan retensi karyawan.
+- Tidak adanya sistem berbasis data untuk memprediksi retensi karyawan.
 
 ### Cakupan Proyek
 
@@ -25,6 +25,7 @@ Pembuatan business dashboard interaktif menggunakan Metabase, yang menampilkan:
 - Analisis faktor pekerjaan (jabatan, departemen, jam kerja, lembur)
 - Analisis kompensasi (gaji bulanan, kenaikan gaji, opsi saham)
 - Analisis kepuasan kerja dan work-life balance
+Pembuatan model machine learning untuk memprediksi karyawan yang akan mengalami retensi.
 
 ### Persiapan
 
