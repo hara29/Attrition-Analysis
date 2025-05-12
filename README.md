@@ -131,7 +131,7 @@ Dari hasil visualisasi, terdapat beberapa poin penting yang dapat disimpulkan:
 5. Meskipun sebagian besar karyawan masih aktif (non-attrition), persentase attrition yang signifikan menunjukkan adanya masalah yang perlu diatasi.
 6. Distribusi attrition yang tidak merata antar departemen mengindikasikan bahwa beberapa area mengalami tantangan organisasi atau beban kerja yang lebih berat.
 
-### Rekomendasi Action Items (Optional)
+### Rekomendasi Action Items
 
 Berdasarkan analisis tersebut, berikut beberapa rekomendasi yang dapat diambil oleh perusahaan:
 
