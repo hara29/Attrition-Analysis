@@ -30,16 +30,20 @@ Berikut adalah permasalahan bisnis utama yang ingin diselesaikan:
 
 Sumber data: [JayaJayaMaju Dataset - Dicoding](https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee)
 
-Untuk membangun dashboard analisis attrition menggunakan Metabase, terdapat dua bagian utama yang perlu dipersiapkan:
+### 📦 Setup Environment
 
-1. **Lingkungan Python** untuk eksplorasi dan pembersihan data (jika dibutuhkan).
-2. **Environment Metabase** untuk membuat dashboard interaktif.
-
-### 📦 Instalasi Library Python
-
-Jika Anda ingin mengolah data terlebih dahulu sebelum digunakan di Metabase, pastikan Anda telah menginstal beberapa library Python berikut:
+**Opsi 1: Menggunakan anaconda**
 ```
-pip install pandas sqlalchemy
+conda create --name attrition-analysis python=3.9
+conda activate attrition-analysis
+pip install -r requirements.txt
+```
+**Opsi 2: Menggunakan Shell/Terminal**
+```
+pip install pipenv
+pipenv install
+pipenv shell
+pip install -r requirements.txt
 ```
 
 ### 🐳 Menjalankan Metabase Menggunakan Docker
@@ -69,37 +73,44 @@ Untuk memudahkan proses setup, Metabase dapat dijalankan menggunakan Docker. Iku
 4. Akses Metabase
    Buka browser dan akses Metabase pada URL berikut [](http://localhost:3000/setup)
 
-**Catatan:**
--  email “root@mail.com”
--  password “root123”
+   Gunakan akun login berikut:
+   - Email: root@mail.com
+   - Password: root123
 
----
+5. Menghubungkan Metabase ke Supabase (PostgreSQL Cloud)
+   Setelah login, pilih opsi untuk menambahkan database dan isi form koneksi berikut:
 
-Untuk menjalankan model prediksi Random Forest terdapat dua bagian utama yang perlu dipersiapkan:
-1. **Prerequisite system and library**
-2. **Langkah - langkah penggunaan**
+   - Database Type: PostgreSQL
+   - Name: Supabase Attrition DB
+   - Host: aws-0-ap-southeast-1.pooler.supabase.com
+   - Port: 6543
+   - Database Name: postgres
+   - Username: postgres.mfklfwdpjxepgrxdhhnb
+   - Password: V1NOgjcNCmz90J52
 
-### Prerequisite
-1.  **Python 3 terinstal** di sistem Anda.
-2.  **Pustaka `pandas` dan `joblib` terinstal.** Anda dapat menginstalnya menggunakan pip:
+   Klik Next dan tunggu hingga koneksi berhasil.
+
+6. Lihat Dashboard 'Employee Dashboard'.
+
+
+⚙️ Setup File Model Prediksi (Random Forest)
+1.  Pastikan Python 3 sudah terinstal.
+2.  Instal pustaka tambahan (jika belum):
     ```bash
     pip install pandas joblib scikit-learn
     ```
 
-3.  **Berkas Model (`rf_model.pkl`) Tersedia:** Letakkan berkas model Random Forest yang telah disimpan di direktori yang sama dengan skrip.
-4.  **Berkas Scaler (`scaler.pkl`) Tersedia:** Letakkan berkas scaler yang telah disimpan di direktori yang sama dengan skrip. Pastikan nama berkasnya sesuai.
-5.  **Berkas Nama Kolom Fitur (`x_columns.pkl`) Tersedia:** Letakkan berkas yang berisi daftar nama kolom fitur di direktori yang sama dengan skrip. Pastikan nama berkasnya sesuai.
-6.  **Berkas Data Karyawan (`cleaned_employees.csv`) Tersedia:** Pastikan berkas CSV ini berada di direktori yang sama dengan skrip. Berkas ini harus memiliki kolom 'Attrition' dan kolom-kolom yang ingin ditampilkan (`EmployeeId`, `Department`, `JobRole`, `OverTime`, `MaritalStatus`, `Gender`).
-
-### Langkah - langkah penggunaan
-1.  **Pastikan Semua Berkas Tersedia:** Letakkan skrip `prediction.py`, berkas model Random Forest (`rf_model.pkl`), berkas scaler (`scaler.pkl`), berkas nama kolom fitur (`x_columns.pkl`), dan berkas data karyawan (`cleaned_employees.csv`) di direktori yang sama. Pastikan Anda mengganti nama berkas model Anda sesuai dengan apa yang sebenarnya Anda simpan.
-
-2.  **Jalankan Skrip Prediksi:** Buka terminal atau command prompt, navigasi ke direktori tempat Anda menyimpan berkas-berkas tersebut, dan jalankan perintah berikut:
-    ```bash
-    python prediction.py
-    ```
-
-3.  **Lihat Hasil Prediksi di Konsol:** Setelah skrip selesai dijalankan, output yang berisi kolom `EmployeeId`, `Department`, `JobRole`, `OverTime`, `MaritalStatus`, dan `Gender` dari 10 karyawan teratas yang diprediksi akan attrition akan ditampilkan langsung di konsol. Karyawan akan diurutkan berdasarkan hasil prediksi kelas attrition (nilai 1).
+3.  Letakkan file berikut di direktori kerja Anda:
+   - rediction.py
+   - rf_model.pkl
+   - scaler.pkl
+   - x_columns.pkl
+   - cleaned_employees.csv
+4.  Jalankan prediksi:
+   ```
+   python prediction.py
+   ```
+   Output prediksi akan muncul di terminal berupa daftar 10 karyawan teratas yang diprediksi mengalami attrition, dilengkapi kolom-kolom  `EmployeeId`, `Department`, `JobRole`, `OverTime`, `MaritalStatus`, dan `Gender`.
 
 ## Business Dashboard
 
